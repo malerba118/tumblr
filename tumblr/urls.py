@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from tumblr.views import Home
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    url(r'^$', Home.as_view(), name = "home"),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^auth/', include("authentication.urls")),
 ]
+urlpatterns += staticfiles_urlpatterns()

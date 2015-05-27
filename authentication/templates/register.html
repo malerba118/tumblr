@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+
+{%block content%}
+<form method = "POST" action = "">
+    {%csrf_token%}
+    {{user_form}}
+    <input type = "submit">
+</form>
+{%endblock%}
