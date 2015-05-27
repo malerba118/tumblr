@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^newsfeed/', Home.as_view(), name = "newsfeed"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^auth/', include("authentication.urls")),
+    url(r'^blog/', include("blogging.urls")),
 ]
 urlpatterns += staticfiles_urlpatterns()

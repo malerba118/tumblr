@@ -64,7 +64,9 @@
                 <li><a href="">One more separated link</a></li>
               </ul>
             </li>
+              <li><a href="{%url 'blog' user.blog.slug%}">My Blog</a></li>
               <li><a href="{%url 'log-out'%}">Log Out</a></li>
+
               {%else%}
               <li><a href="{%url 'log-in'%}">Log In</a></li>
               <li><a href="{%url 'register'%}">Sign Up</a></li>

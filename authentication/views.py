@@ -7,21 +7,27 @@ from django.views.generic import TemplateView
 from django.template.context_processors import csrf
 from authentication.forms import UserRegisterForm, UserLoginForm
 # Create your views here.
-
+from blogging.forms import BlogCreateForm
 
 
 def register(request):
     if request.method == "POST":
         user_form = UserRegisterForm(request.POST)
-        if user_form.is_valid():
+        blog_form = BlogCreateForm(request.POST)
+        if user_form.is_valid() and blog_form.is_valid():
             user = user_form.save(commit=False)
             user.username = user.email
             user.save()
+            blog = blog_form.save(commit=False)
+            blog.user = user
+            blog.save()
             return redirect(reverse("log-in"))
     else:
         user_form = UserRegisterForm()
+        blog_form = BlogCreateForm()
 
-    context =  {"user_form":user_form}
+
+    context =  {"user_form":user_form, "blog_form":blog_form}
     context.update(csrf(request))
 
     return render_to_response("register.html",context)

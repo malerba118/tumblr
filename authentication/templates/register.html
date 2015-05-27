@@ -10,6 +10,9 @@
         {%for field in user_form%}
         {% bootstrap_field field layout='vertical' size='sm' %}
         {%endfor%}
+        {%for field in blog_form%}
+        {% bootstrap_field field layout='vertical' size='sm' %}
+        {%endfor%}
         {% buttons submit='Register' %}{% endbuttons %}
     </form>
 
