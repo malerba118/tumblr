@@ -1,4 +1,6 @@
-{%extends "base_blog.html"%}
+
+{%extends base_template%}
+
 
 {% load staticfiles %}
 
@@ -19,6 +21,8 @@
 
 
 {%endblock%}
+
+
 
 {%block content%}
 
@@ -49,7 +53,7 @@
                         <a href="post.html">Sample Post</a>
                     </li>
                     <li>
-                        <a href="contact.html">Edit Blog</a>
+                        <a href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -76,27 +80,23 @@
 
 
     <!-- Main Content -->
-{%for post in posts%}
-    <div class="col-md-4 col-sm-6">
-    	<div class="panel panel-default">
-           <div class="panel-heading"><a href="#" class="pull-right">{{post.timestamp}}</a>
-               <h4>Source: {{post.root.blog.slug}}
-               </h4></div>
-   			<div class="panel-body">
-              <div class="clearfix"></div>
-                <h3>{{post.title}}</h3>
-              <hr>
-
-              <p>{{post.content}}</p>
-
-            </div>
-         </div>
-    </div><!--/articles-->
-    </div>
-{%endfor%}
-
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {%for post in posts%}
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            {{post.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{post.content}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">-> {%if post.root%} <a href="#">Source: {{post.root.blog}}{%endif%} </a> at {{post.timestamp}}<a href="{%url 'reblog' post.pk%}">reblog</a> </p>
+                </div>
+                <hr>
+                {%endfor%}
 
                 <!-- Pager -->
                 <ul class="pager">
@@ -109,13 +109,6 @@
     </div>
 
     <hr>
-
-
-
-
-
-
-
 
     <!-- Footer -->
     <footer>

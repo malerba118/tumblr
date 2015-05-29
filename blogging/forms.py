@@ -1,5 +1,5 @@
 from django import forms
-from blogging.models import Blog
+from blogging.models import Blog, Post
 
 
 class BlogCreateForm(forms.ModelForm):
@@ -8,3 +8,8 @@ class BlogCreateForm(forms.ModelForm):
         model = Blog
         fields = ("slug",)
 
+
+class PostCreateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ("title", "content",)

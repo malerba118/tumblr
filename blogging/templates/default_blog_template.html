@@ -1,9 +1,117 @@
+
 {%extends "base.html"%}
 
 
-{% block content %}
+{% load staticfiles %}
 
-title: {{blog.title}}
-description: {{blog.description}}
+<html lang="en">
+
+{%block head%}
+
+
+    <title>{{blog.title}}</title>
+
+
+{%endblock%}
+
+{%block content%}
+
+    {%include "base_blog.html"%}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="jumbotron" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{blog.title}}</h1>
+                        <hr class="small">
+                        <span class="subheading">{{blog.description}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+{%for post in posts%}
+    <div class="col-md-4 col-sm-6">
+    	<div class="panel panel-default">
+           <div class="panel-heading"><a href="#" class="pull-right">{{post.timestamp}}</a>
+               <h4>Source: {{post.root.blog.slug}}
+               </h4></div>
+   			<div class="panel-body">
+              <div class="clearfix"></div>
+                <h3>{{post.title}}</h3>
+              <hr>
+
+              <p>{{post.content}}</p>
+
+            </div>
+         </div>
+    </div><!--/articles-->
+{%endfor%}
+
+
+
+
+<!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'css/clean-blog.min.js'%}"></script>
+
+
 
 {% endblock %}

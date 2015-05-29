@@ -1,0 +1,73 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+
+
+<div class="container" id="posts">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+
+
+            {%for activity in activities%}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="pull-right">{{activity.timestamp}}</div>
+                    <div>{{activity.object.blog.slug}} posted:</div>
+                </div>
+                <div class="panel-body">
+                    <blockquote>
+                        <h3>{{activity.object.title}}</h3>
+                        <hr>
+                        <p>{{activity.object.content}}</p>
+                    </blockquote>
+
+                    <div class="tumblr-tags">
+                        <span class="glyphicon glyphicon-tags"></span>
+
+                        <a href="http://tumbootstrap.tumblr.com/tagged/bolt" class="label label-default">bolt</a>
+
+                        <a href="http://tumbootstrap.tumblr.com/tagged/disney" class="label label-default">disney</a>
+
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+
+
+
+
+                    <div class="pull-right inline">
+                        <span class="badge" title="3 notes">3</span>
+                        <div class="btn-group" role="group" aria-label="...">
+
+                            <a role="button" class="btn btn-default" href=""><span class="glyphicon glyphicon-heart-empty"></span></a>
+                            <a role="button" class="btn btn-default" href="{%url 'reblog' activity.object.pk%}">Reblog</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <p>
+                            <a href="">Source: {{activity.object.root.blog.slug}}</a></p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {%endfor%}
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

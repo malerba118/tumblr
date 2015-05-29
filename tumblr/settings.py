@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'authentication',
     'bootstrap3',
     'blogging',
+    'newsfeed',
 )
 
 MIDDLEWARE_CLASSES = (
