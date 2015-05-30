@@ -38,7 +38,23 @@ class Blog(models.Model):
         return f
 
 
+class Tag(models.Model):
+    tag = models.CharField(max_length=50)
 
+    @staticmethod
+    def find_or_create_tags(string):
+        tags = []
+        words = string.split(",")
+        for word in words:
+            lc_word = word.strip().lower()
+            if Tag.objects.filter(tag=lc_word).count() > 0:
+                tags.append(Tag.objects.get(tag=lc_word))
+            else:
+                tag = Tag()
+                tag.tag = lc_word
+                tag.save()
+                tags.append(tag)
+        return tags
 
 class Post(models.Model):
     blog = models.ForeignKey(Blog)
@@ -46,16 +62,22 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add = True)
     title = models.CharField(max_length=100)
     content = models.TextField()
+    tags = models.ManyToManyField(Tag)
 
-    def set_root(self, reblogged_post):
-        if reblogged_post.root == None:
-            self.root = reblogged_post
-        else:
-            self.root = reblogged_post.root
+    def find_notes(self):
+        return Post.objects.filter(root=self.root)
+
+    def is_liked_by(self, blog):
+        return Like.objects.filter(liker=blog, liked=self).count() > 0
 
 
 
 class Follow(models.Model):
     follower = models.ForeignKey(Blog, related_name="follower")
     followee = models.ForeignKey(Blog, related_name="followee")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+class Like(models.Model):
+    liker = models.ForeignKey(Blog)
+    liked = models.ForeignKey(Post)
     timestamp = models.DateTimeField(auto_now_add=True)
