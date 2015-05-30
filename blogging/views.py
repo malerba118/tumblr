@@ -47,9 +47,10 @@ def reblog_post(request, post_id):
         form = PostCreateForm(request.POST)
         if form.is_valid():
             new_post = form.save(commit=False)
-            new_post.set_root(post)
+            new_post.root = post.root
             new_post.blog = request.user.blog
             new_post.save()
+            Activity.create_activity(request.user.blog, new_post, REBLOG)
             return redirect(request.user.blog.get_absolute_url())
     form = PostCreateForm()
     form.fields["title"].initial = post.title

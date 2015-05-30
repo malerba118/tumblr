@@ -9,17 +9,23 @@
         <div class="col-md-9 col-md-offset-1">
 
 
-            {%for activity in activities%}
+            {%for activity_dict in activity_dicts%}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="pull-right">{{activity.timestamp}}</div>
-                    <div>{{activity.object.blog.slug}} posted:</div>
+                    <div class="pull-right">{{activity_dict.activity.timestamp}}</div>
+                    <div>{{activity_dict.activity.object.blog.slug}}
+                        {%if activity_dict.activity.activity_type == 0 %}
+                            posted:
+                        {%elif activity_dict.activity.activity_type == 1 %}
+                            reblogged:
+                        {%endif%}
+                    </div>
                 </div>
                 <div class="panel-body">
                     <blockquote>
-                        <h3>{{activity.object.title}}</h3>
+                        <h3>{{activity_dict.activity.object.title}}</h3>
                         <hr>
-                        <p>{{activity.object.content}}</p>
+                        <p>{{activity_dict.activity.object.content}}</p>
                     </blockquote>
 
                     <div class="tumblr-tags">
@@ -38,18 +44,18 @@
 
 
                     <div class="pull-right inline">
-                        <span class="badge" title="3 notes">3</span>
+                        <span class="badge" title="3 notes">{{activity_dict.notes.count}}</span>
                         <div class="btn-group" role="group" aria-label="...">
 
                             <a role="button" class="btn btn-default" href=""><span class="glyphicon glyphicon-heart-empty"></span></a>
-                            <a role="button" class="btn btn-default" href="{%url 'reblog' activity.object.pk%}">Reblog</a>
+                            <a role="button" class="btn btn-default" href="{%url 'reblog' activity_dict.activity.object.pk%}">Reblog</a>
                         </div>
                     </div>
 
                     <div>
                         <div>
                             <p>
-                            <a href="">Source: {{activity.object.root.blog.slug}}</a></p>
+                            <a href="">Source: {{activity_dict.activity.object.root.blog.slug}}</a></p>
 
                         </div>
                     </div>

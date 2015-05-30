@@ -53,6 +53,6 @@ class Activity(models.Model):
         followers = []
         for follow in follows:
             followers.append(follow.followee)
-        activities = Activity.objects.filter(subject__in=followers, activity_type=POST)
+        activities = Activity.objects.filter(subject__in=followers, activity_type__in=[POST, REBLOG])
         return activities
 
