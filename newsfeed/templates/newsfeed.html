@@ -13,7 +13,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="pull-right">{{activity_dict.activity.timestamp}}</div>
-                    <div>{{activity_dict.activity.object.blog.slug}}
+                    <div>
+                        <a href="{%url 'blog' activity_dict.activity.object.blog.slug%}">
+                            {{activity_dict.activity.object.blog.slug}}
+                        </a>
                         {%if activity_dict.activity.activity_type == 0 %}
                             posted:
                         {%elif activity_dict.activity.activity_type == 1 %}
@@ -25,14 +28,14 @@
                     <blockquote>
                         <h3>{{activity_dict.activity.object.title}}</h3>
                         <hr>
-                        <p>{{activity_dict.activity.object.content}}</p>
+                        <p>{{activity_dict.activity.object.content|safe}}</p>
                     </blockquote>
 
                     <div class="tumblr-tags">
                         <span class="glyphicon glyphicon-tags"></span>
 
                         {%for tag_object in activity_dict.tags%}
-                        <a href="" class="label label-default">{{tag_object.tag}}</a>
+                        <a href="{%url 'tagged' tag_object.tag%}" class="label label-default">{{tag_object.tag}}</a>
                         {%endfor%}
 
                     </div>
@@ -44,7 +47,7 @@
 
 
                     <div class="pull-right inline">
-                        <span class="badge" title="3 notes">{{activity_dict.notes.count}}</span>
+                        <span class="badge">{{activity_dict.reblogs.count|add:activity_dict.likes.count}}</span>
                         <div class="btn-group" role="group" aria-label="...">
 
                             {%if activity_dict.is_liked%}
@@ -58,8 +61,11 @@
 
                     <div>
                         <div>
-                            <p>
-                            <a href="">Source: {{activity_dict.activity.object.root.blog.slug}}</a></p>
+                            <p>Source:
+                                <a href="{%url 'blog' activity_dict.activity.object.root.blog.slug%}">
+                                    {{activity_dict.activity.object.root.blog.slug}}
+                                </a>
+                            </p>
 
                         </div>
                     </div>

@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'bootstrap3',
     'blogging',
     'newsfeed',
+    'search',
+    'django_summernote',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,7 +89,7 @@ WSGI_APPLICATION = 'tumblr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tumblr',
+        'NAME': 'tumblr2',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

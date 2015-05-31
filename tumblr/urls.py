@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^home/', Home.as_view(), name = "newsfeed"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^auth/', include("authentication.urls")),
-    url(r'^blog/', include("blogging.urls")),
+    url(r'^blogging/', include("blogging.urls")),
     url(r'^newsfeed/', include("newsfeed.urls")),
+    url(r'^search/', include("search.urls")),
+    url(r'^summernote/', include('django_summernote.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()

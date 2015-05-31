@@ -3,17 +3,21 @@
 {% load bootstrap3 %}
 
 {% block content %}
-
-    <form role="form" method="post">
-        {% csrf_token %}
-        {% bootstrap_form_errors user_form type='non_fields' %}
-        {%for field in user_form%}
-        {% bootstrap_field field layout='vertical' size='sm' %}
-        {%endfor%}
-        {%for field in blog_form%}
-        {% bootstrap_field field layout='vertical' size='sm' %}
-        {%endfor%}
-        {% buttons submit='Register' %}{% endbuttons %}
-    </form>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form role="form" method="post">
+                {% csrf_token %}
+                {% bootstrap_form_errors user_form type='non_fields' %}
+                {%for field in user_form%}
+                {% bootstrap_field field layout='vertical' size='sm' %}
+                {%endfor%}
+                {%for field in blog_form%}
+                {% bootstrap_field field layout='vertical' size='sm' %}
+                {%endfor%}
+                {% buttons submit='Register' %}{% endbuttons %}
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

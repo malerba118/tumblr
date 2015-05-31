@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 
 # Create your models here.
-
+from django.utils.text import slugify
 
 
 class Blog(models.Model):
@@ -46,26 +46,40 @@ class Tag(models.Model):
         tags = []
         words = string.split(",")
         for word in words:
-            lc_word = word.strip().lower()
-            if Tag.objects.filter(tag=lc_word).count() > 0:
-                tags.append(Tag.objects.get(tag=lc_word))
-            else:
-                tag = Tag()
-                tag.tag = lc_word
-                tag.save()
-                tags.append(tag)
+            sluggified_word = slugify(word)
+            if sluggified_word != '':
+                if Tag.objects.filter(tag=sluggified_word).count() > 0:
+                    tags.append(Tag.objects.get(tag=sluggified_word))
+                else:
+                    tag = Tag()
+                    tag.tag = sluggified_word
+                    tag.save()
+                    tags.append(tag)
         return tags
+
+    @staticmethod
+    def find_posts_for_tag(tag):
+        try:
+            qs = Tag.objects.get(tag=tag)
+        except Tag.DoesNotExist:
+            return []
+
+        return qs.post_set.all()
+
 
 class Post(models.Model):
     blog = models.ForeignKey(Blog)
     root = models.ForeignKey("self", null=True)
     timestamp = models.DateTimeField(auto_now_add = True)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=True, blank=True)
     content = models.TextField()
     tags = models.ManyToManyField(Tag)
 
     def find_notes(self):
         return Post.objects.filter(root=self.root)
+
+    def find_likes(self):
+        return Like.objects.filter(liked=self)
 
     def is_liked_by(self, blog):
         return Like.objects.filter(liker=blog, liked=self).count() > 0

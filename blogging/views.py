@@ -18,7 +18,11 @@ def blog_view(request, slug):
         base_template = "editable_base_blog.html"
     else:
         base_template = "base_blog.html"
-    context = {"blog":blog, "posts":posts, "is_following":is_following, "base_template":base_template}
+    context = {"blog":blog,
+               "posts":posts,
+               "is_following":is_following,
+               "base_template":base_template,
+               "has_edit_permissions":has_edit_permissions}
     context.update(csrf(request))
     return render(request, blog.template, context)
 
@@ -83,3 +87,16 @@ def unlike(request, post_id):
     like = get_object_or_404(Like, liker=request.user.blog, liked=post)
     like.delete()
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+def tagged_view(request, tag):
+    posts = Tag.find_posts_for_tag(tag)
+    post_dicts=[]
+    for post in posts:
+        post_dicts.append({"post": post,
+                           "is_liked":post.is_liked_by(request.user.blog),
+                           "reblogs": post.find_notes(),
+                           "likes": post.find_likes(),
+                           "tags": post.tags.all()})
+    context = {"tag":tag, "post_dicts":post_dicts}
+    return render(request, "tagged.html", context)

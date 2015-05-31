@@ -4,13 +4,19 @@
 
 {% block content %}
 
-    <form role="form" method="post">
-        {% csrf_token %}
-        {% bootstrap_form_errors post_form type='non_fields' %}
-        {%for field in post_form%}
-        {% bootstrap_field field layout='vertical' size='sm' %}
-        {%endfor%}
-        {% buttons submit='Publish' %}{% endbuttons %}
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <form method="post">
+                {% csrf_token %}
+
+                {%for field in post_form%}
+                {% bootstrap_field field size='sm' %}
+                {%endfor%}
+                {% buttons submit='Publish' %}{% endbuttons %}
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
