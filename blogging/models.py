@@ -123,7 +123,7 @@ class Tag(models.Model):
         except Tag.DoesNotExist:
             return []
 
-        return qs.post_set.all()
+        return qs.post_set.order_by("-timestamp").all()
 
 
 class Post(models.Model):

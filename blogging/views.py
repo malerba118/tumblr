@@ -61,7 +61,8 @@ def reblog_post(request, post_id):
             return redirect(request.user.blog.get_absolute_url())
     form = PostCreateForm()
     form.fields["title"].initial = post.title
-    form.fields["content"].initial = post.content
+    form.fields["content"].initial = "<blockquote>%s</blockquote><a href='%s'>%s:</a>" % \
+                                     (post.content, request.user.blog.slug, request.user.blog.slug)
     context = {"post_form": form}
     context.update(csrf(request))
     return render(request, "post_create.html", context)
