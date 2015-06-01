@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from blogging.models import Post, Like
-from newsfeed.models import Activity, POST, REBLOG, LIKE
+from blogging.models import Activity, POST, REBLOG, LIKE
 
 
 def newsfeed_view(request):

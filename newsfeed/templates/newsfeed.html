@@ -10,6 +10,7 @@
 
 
             {%for activity_dict in activity_dicts%}
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="pull-right">{{activity_dict.activity.timestamp}}</div>
@@ -18,9 +19,9 @@
                             {{activity_dict.activity.object.blog.slug}}
                         </a>
                         {%if activity_dict.activity.activity_type == 0 %}
-                            posted:
+                        posted:
                         {%elif activity_dict.activity.activity_type == 1 %}
-                            reblogged:
+                        reblogged:
                         {%endif%}
                     </div>
                 </div>
@@ -47,7 +48,7 @@
 
 
                     <div class="pull-right inline">
-                        <span class="badge">{{activity_dict.reblogs.count|add:activity_dict.likes.count}}</span>
+                        <span  role="button" class="badge notes-badge">{{activity_dict.reblogs.count|add:activity_dict.likes.count}}</span>
                         <div class="btn-group" role="group" aria-label="...">
 
                             {%if activity_dict.is_liked%}
@@ -71,8 +72,38 @@
                     </div>
 
 
+
+
                 </div>
+
+
+                <div class="notes" hidden="true" style="overflow:auto;" >
+                    <br>
+                    <ul class="list-group pull-right" style="margin-right:10px; width: 48%;">
+                        <li class="list-group-item list-group-item-warning">Likes</li>
+                        {%for like in activity_dict.likes%}
+                        <a href = "{%url 'blog' like.liker.slug%}">
+                            <li class="list-group-item">Liked by {{like.liker.slug}}.</li>
+                        </a>
+                        {%endfor%}
+                    </ul>
+                    <ul class="list-group" style="margin-left:10px; width: 48%;">
+                        <li class="list-group-item list-group-item-warning">Reblogs</li>
+                        {%for reblog in activity_dict.reblogs%}
+                        <a href = "{%url 'blog' reblog.blog.slug%}">
+                            <li class="list-group-item">Reposted by {{reblog.blog.slug}}.</li>
+                        </a>
+                        {%endfor%}
+                    </ul>
+
+                </div>
+
             </div>
+
+
+
+
+
             {%endfor%}
 
 
@@ -87,3 +118,10 @@
 
 
 {% endblock %}
+
+{%block javascript%}
+        $(".notes-badge").on("click", function(){
+            $(this).parent().parent().next(".notes").slideToggle(500);
+
+        });
+{%endblock%}

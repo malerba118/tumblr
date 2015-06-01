@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 from blogging.forms import PostCreateForm
-from blogging.models import Blog, Post, Like, Tag
+from blogging.models import Blog, Post, Like, Tag, Activity, POST, REBLOG, FOLLOW, Follow
 from newsfeed.models import *
 
 
@@ -74,6 +74,13 @@ def follow(request, slug):
         Activity.create_activity(request.user.blog, follow, FOLLOW)
     return redirect(reverse("blog", kwargs={"slug":blog.slug}))
 
+def unfollow(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    if request.user.blog.is_following(blog):
+        follow = Follow.objects.get(follower=request.user.blog, followee=blog)
+        follow.delete()
+    return redirect(reverse("blog", kwargs={"slug":blog.slug}))
+
 def like(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     like = Like()
@@ -100,3 +107,22 @@ def tagged_view(request, tag):
                            "tags": post.tags.all()})
     context = {"tag":tag, "post_dicts":post_dicts}
     return render(request, "tagged.html", context)
+
+
+class DisplayInfo():
+
+    def __init__(self, subject, object, activity_type):
+        self["activity_type"] = activity_type
+        self["timestamp"] = object.timestamp
+
+    def is_post(self):
+        return self.activity_type == POST
+
+class PostDisplayInfo(DisplayInfo):
+
+    def __init__(self, subject, post, activity_type):
+        DisplayInfo.__init__(self, subject, post, activity_type)
+        self["post"] = post
+        self["is_liked"] = post.is_liked_by(subject)
+        self["reblogs"] = post.find_notes()
+        self["tags"] = post.tags.all()

@@ -42,12 +42,16 @@ def log_in(request):
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
             user = authenticate(username=username, password=password)
+            is_new_user = user.last_login == None
 
             if user is not None:
     # the password verified for the user
                 if user.is_active:
                     login(request, user)
-                    return redirect("newsfeed")
+                    if is_new_user:
+                        return redirect(reverse("blog", kwargs={"slug":user.blog.slug}))
+                    else:
+                        return redirect("newsfeed")
                 else:
                     messages.error(request, "This account has been disabled!")
             else:

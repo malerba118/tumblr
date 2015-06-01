@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'tumblr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tumblr2',
+        'NAME': 'tumblr4',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

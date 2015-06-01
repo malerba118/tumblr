@@ -11,9 +11,15 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='activity',
-            name='timestamp',
-            field=models.DateTimeField(),
+            name='content_type',
+        ),
+        migrations.RemoveField(
+            model_name='activity',
+            name='subject',
+        ),
+        migrations.DeleteModel(
+            name='Activity',
         ),
     ]

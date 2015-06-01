@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^post/(?P<post_id>\d+)/unlike/', 'blogging.views.unlike', name="unlike"),
     url(r'^posts/tagged/(?P<tag>[-_\w]+)/', 'blogging.views.tagged_view', name="tagged"),
     url(r'^blog/(?P<slug>[-_\w]+)/follow/', 'blogging.views.follow', name="follow"),
+    url(r'^blog/(?P<slug>[-_\w]+)/unfollow/', 'blogging.views.unfollow', name="unfollow"),
 	url(r'^blog/(?P<slug>[-_\w]+)/', 'blogging.views.blog_view', name="blog"),
 
 )
