@@ -33,10 +33,12 @@ def blog_edit_view(request, slug):
     if not blog.isOwnedBy(request.user):
         return HttpResponseForbidden()
 
-    form = BlogEditForm(request.POST or None, instance=blog)
+    form = BlogEditForm(request.POST or None, request.FILES or None, instance=blog)
     if request.method == "POST":
         if form.is_valid():
-            form.save()
+            blog = form.save(commit=False)
+            blog.image = request.FILES["image"]
+            blog.save()
             return redirect(blog.get_absolute_url())
         #else:
             #messages.error(request, "This blog name is already taken!")

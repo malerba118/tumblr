@@ -13,6 +13,7 @@ class BlogCreateForm(forms.ModelForm):
         fields = ("slug",)
 
 class BlogEditForm(forms.ModelForm):
+    image = forms.ImageField()
     class Meta:
         model = Blog
         fields = ("slug", "title", "description", "template")
