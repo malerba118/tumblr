@@ -1,10 +1,11 @@
+from django.contrib import messages
 from django.core.context_processors import csrf
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
-from blogging.forms import PostCreateForm
+from blogging.forms import PostCreateForm, BlogEditForm
 from blogging.models import Blog, Post, Like, Tag, Activity, POST, REBLOG, FOLLOW, Follow
 from newsfeed.models import *
 
@@ -25,6 +26,27 @@ def blog_view(request, slug):
                "has_edit_permissions":has_edit_permissions}
     context.update(csrf(request))
     return render(request, blog.template, context)
+
+
+def blog_edit_view(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    if not blog.isOwnedBy(request.user):
+        return HttpResponseForbidden()
+
+    form = BlogEditForm(request.POST or None, instance=blog)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect(blog.get_absolute_url())
+        #else:
+            #messages.error(request, "This blog name is already taken!")
+
+    context = {"form":form}
+    context.update(csrf(request))
+    return render(request, "blog_edit.html", context)
+
+
+
 
 def post_create_view(request, slug):
     blog = get_object_or_404(Blog, slug=slug)

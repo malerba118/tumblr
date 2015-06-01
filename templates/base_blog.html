@@ -1,13 +1,13 @@
 
 <div style="margin-left:20px; margin-bottom:20px;">
 {%if is_following%}
-    <a role="button" class="btn btn-info" href="{%url 'unfollow' blog.slug%}">unfollow</a>
+    <a role="button" class="btn btn-info" href="{%url 'unfollow' blog.slug%}">Unfollow</a>
 {%else%}
-    <a role="button" class="btn btn-info" href="{%url 'follow' blog.slug%}">follow</a>
+    <a role="button" class="btn btn-info" href="{%url 'follow' blog.slug%}">Follow</a>
 {%endif%}
 {%if has_edit_permissions%}
 <a role="button" class="btn btn-info" href="{%url 'post-create' blog.slug%}">Write post</a>
-
+<a role="button" class="btn btn-info" href="{%url 'blog-edit' blog.slug%}">Edit blog</a>
 {%endif%}
 
 </div>

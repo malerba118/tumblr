@@ -9,8 +9,6 @@ from django.db import models
 from django.utils.text import slugify
 
 
-
-
 POST = 0
 REBLOG = 1
 LIKE = 2
@@ -26,15 +24,20 @@ ACTIVITY_TYPE = (
 )
 
 
-
-
-
-
 class Blog(models.Model):
+
+    DEFAULT = "default_blog_template.html"
+    SIMPLE = "simple_blog_template.html"
+
+    BLOG_TEMPLATE_CHOICES = (
+        (DEFAULT, "Default"),
+        (SIMPLE, "Simple"),
+    )
+
     user = models.OneToOneField(User)
     title = models.CharField(max_length=100, default="Dooood, give your blog a title")
     description = models.CharField(max_length=500, default="Look at me, I'm a description, weeee (hell yes, that even rhymes).")
-    template = models.CharField(max_length=100, default="default_blog_template.html")
+    template = models.CharField(max_length=100, choices=BLOG_TEMPLATE_CHOICES, default=DEFAULT)
     slug = models.SlugField(unique = True)
 
     def get_absolute_url(self):

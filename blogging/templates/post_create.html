@@ -10,8 +10,10 @@
             <form method="post">
                 {% csrf_token %}
 
+
+                {% bootstrap_form_errors post_form type='non_fields' %}
                 {%for field in post_form%}
-                {% bootstrap_field field size='sm' %}
+                {% bootstrap_field field layout='vertical' size='sm' %}
                 {%endfor%}
                 {% buttons submit='Publish' %}{% endbuttons %}
             </form>
