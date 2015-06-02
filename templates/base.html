@@ -86,9 +86,9 @@
           <div class="container">
               <form action="{%url 'search-tags'%}" method="GET" role="search">
                   <div class="input-group">
-                      <input type="text" class="form-control" name="q" placeholder="Search for a tag and hit enter">
+                      <input id="search-bar-input" type="text" class="form-control" name="q" placeholder="Search for a tag and hit enter">
           <span class="input-group-btn">
-            <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span></button>
+            <button id="search-bar-reset" class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span></button>
           </span>
                   </div>
               </form>
@@ -132,8 +132,15 @@
 
     <script>
         function searchToggle(){
-            $("#search-bar").slideToggle(500);
+
+            var search_bar = $("#search-bar")
+            var search_bar_input = $("#search-bar-input")
+
+            search_bar.slideToggle(500);
+            search_bar_input.focus();
+
         }
+
         {%block javascript%}
         {%endblock%}
     </script>

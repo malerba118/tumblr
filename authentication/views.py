@@ -49,7 +49,7 @@ def log_in(request):
                 if user.is_active:
                     login(request, user)
                     if is_new_user:
-                        return redirect(reverse("blog", kwargs={"slug":user.blog.slug}))
+                        return redirect("blog-browse")
                     else:
                         return redirect("newsfeed")
                 else:
