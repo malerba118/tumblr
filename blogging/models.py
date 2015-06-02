@@ -36,7 +36,7 @@ class Blog(models.Model):
     )
 
     user = models.OneToOneField(User)
-    image = ImageField(upload_to="blog_pictures/", default="blog_pictures/default.jpg")
+    image = ImageField(upload_to="blog_pictures/", default="blog_pictures/default.jpg", blank=True)
     title = models.CharField(max_length=100, default="Dooood, give your blog a title")
     description = models.CharField(max_length=500, default="Look at me, I'm a description, weeee (hell yes, that even rhymes).")
     template = models.CharField(max_length=100, choices=BLOG_TEMPLATE_CHOICES, default=DEFAULT)
@@ -50,6 +50,20 @@ class Blog(models.Model):
 
     def get_posts(self):
         return Post.objects.filter(blog = self).order_by("-timestamp")
+
+    def find_followers(self):
+        follows = Follow.objects.filter(followee=self)
+        followers=[]
+        for follow in follows:
+            followers.append(follow.follower)
+        return followers
+
+    def find_followees(self):
+        follows = Follow.objects.filter(follower=self)
+        followees=[]
+        for follow in follows:
+            followees.append(follow.followee)
+        return followees
 
     def is_following(self, blog):
         return Follow.objects.filter(follower=self, followee=blog).count() != 0
@@ -92,6 +106,11 @@ class Activity(models.Model):
         #    activity.content_type = ContentType.objects.get_for_model(Comment)
         activity.object_fk = object.pk
         activity.save()
+
+    @staticmethod
+    def find_activity_for_object(object_pk, content_type):
+        return Activity.objects.get(content_type=content_type, object_fk=object_pk)
+
 
     @staticmethod
     def find_newsfeed_activities(blog):

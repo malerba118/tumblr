@@ -12,9 +12,13 @@
     <title>{{blog.title}}</title>
 
 
+
 {%endblock%}
 
 {%block content%}
+
+
+
 
     {%include "base_blog.html"%}
     <!-- Page Header -->
@@ -34,26 +38,50 @@
         </div>
     </header>
 
+<div class="container-fluid">
 
-{%for post in posts%}
+    <div class="row">
 
-    <div style="width:33%; display:inline-block; vertical-align:top;">
-    	<div class="panel panel-default">
-           <div class="panel-heading"><a href="#" class="pull-right">{{post.timestamp}}</a>
-               <h4>Source: {{post.root.blog.slug}}
-               </h4></div>
-   			<div class="panel-body">
-              <div class="clearfix"></div>
-                <h3>{{post.title}}</h3>
-              <hr>
+        <div class="col-md-2 pull-right">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-warning">Followers</li>
+                {%for follower_info in follower_info_list%}
+                <a href="{%url 'blog' follower_info.blog.slug%}"><li class="list-group-item">{{follower_info.blog.slug}}</li></a>
+                {%endfor%}
 
-              <p>{{post.content|safe}}</p>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-warning">Following</li>
+                {%for followee_info in followee_info_list%}
+                <a href="{%url 'blog' followee_info.blog.slug%}"><li class="list-group-item">{{followee_info.blog.slug}}</li></a>
+                {%endfor%}
 
+            </ul>
+        </div>
+
+        {%for post in posts%}
+
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-heading"><a href="#" class="pull-right">{{post.timestamp}}</a>
+                    <h4>Source: {{post.root.blog.slug}}
+                    </h4></div>
+                <div class="panel-body">
+                    <div class="clearfix"></div>
+                    <h3>{{post.title}}</h3>
+                    <hr>
+
+                    <p>{{post.content|safe}}</p>
+
+                </div>
             </div>
-         </div>
-    </div><!--/articles-->
-{%endfor%}
+        </div>
 
+
+        <!--/articles-->
+        {%endfor%}
+    </div>
+</div>
 
 
 
@@ -63,9 +91,6 @@
                         <a href="#">Older Posts &rarr;</a>
                     </li>
                 </ul>
-
-
-
 
 
 
@@ -111,7 +136,8 @@
     </footer>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{% static 'css/clean-blog.min.js'%}"></script>
+    <script src="{% static 'js/clean-blog.min.js'%}"></script>
+    <script src="{%static 'js/masonry.pkgd.min.js'%}"></script>
 
 
 

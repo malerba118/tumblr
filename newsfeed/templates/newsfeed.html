@@ -9,39 +9,39 @@
 
 
 
-    {%for activity_dict in activity_dicts%}
+    {%for display_info in display_info_list%}
 
     <div class="row">
-        {% thumbnail activity_dict.activity.object.blog.image "80x80" crop="center" as im %}
+        {% thumbnail display_info.post.blog.image "80x80" crop="center" as im %}
         <div class="col-md-1 col-md-offset-1"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></div>
         {% endthumbnail %}
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="pull-right">{{activity_dict.activity.timestamp}}</div>
+                    <div class="pull-right">{{display_info.timestamp}}</div>
                     <div>
-                        <a href="{%url 'blog' activity_dict.activity.object.blog.slug%}">
-                            {{activity_dict.activity.object.blog.slug}}
+                        <a href="{%url 'blog' display_info.post.blog.slug%}">
+                            {{display_info.post.blog.slug}}
                         </a>
-                        {%if activity_dict.activity.activity_type == 0 %}
+                        {%if display_info.is_post %}
                         posted:
-                        {%elif activity_dict.activity.activity_type == 1 %}
+                        {%elif display_info.is_reblog %}
                         reblogged:
                         {%endif%}
                     </div>
                 </div>
                 <div class="panel-body">
 
-                    <h3>{{activity_dict.activity.object.title}}</h3>
+                    <h3>{{display_info.post.title}}</h3>
                     <hr>
                     <blockquote>
-                        <p>{{activity_dict.activity.object.content|safe}}</p>
+                        <p>{{display_info.post.content|safe}}</p>
                     </blockquote>
 
                     <div class="tumblr-tags">
                         <span class="glyphicon glyphicon-tags"></span>
 
-                        {%for tag_object in activity_dict.tags%}
+                        {%for tag_object in display_info.tags%}
                         <a href="{%url 'tagged' tag_object.tag%}" class="label label-default">{{tag_object.tag}}</a>
                         {%endfor%}
 
@@ -54,23 +54,23 @@
 
 
                     <div class="pull-right inline">
-                        <span  role="button" class="badge notes-badge">{{activity_dict.reblogs.count|add:activity_dict.likes.count}}</span>
+                        <span  role="button" class="badge notes-badge">{{display_info.reblogs.count|add:display_info.likes.count}}</span>
                         <div class="btn-group" role="group" aria-label="...">
 
-                            {%if activity_dict.is_liked%}
-                            <a role="button" class="btn btn-default" href="{%url 'unlike' activity_dict.activity.object.pk%}"><span class="glyphicon glyphicon-heart"></span></a>
+                            {%if display_info.is_liked%}
+                            <a role="button" class="btn btn-default" href="{%url 'unlike' display_info.post.pk%}"><span class="glyphicon glyphicon-heart"></span></a>
                             {%else%}
-                            <a role="button" class="btn btn-default" href="{%url 'like' activity_dict.activity.object.pk%}"><span class="glyphicon glyphicon-heart-empty"></span></a>
+                            <a role="button" class="btn btn-default" href="{%url 'like' display_info.post.pk%}"><span class="glyphicon glyphicon-heart-empty"></span></a>
                             {%endif%}
-                            <a role="button" class="btn btn-default" href="{%url 'reblog' activity_dict.activity.object.pk%}">Reblog</a>
+                            <a role="button" class="btn btn-default" href="{%url 'reblog' display_info.post.pk%}">Reblog</a>
                         </div>
                     </div>
 
                     <div>
                         <div>
                             <p>Source:
-                                <a href="{%url 'blog' activity_dict.activity.object.root.blog.slug%}">
-                                    {{activity_dict.activity.object.root.blog.slug}}
+                                <a href="{%url 'blog' display_info.post.root.blog.slug%}">
+                                    {{display_info.post.root.blog.slug}}
                                 </a>
                             </p>
 
@@ -87,7 +87,7 @@
                     <br>
                     <ul class="list-group pull-right" style="margin-right:10px; width: 48%;">
                         <li class="list-group-item list-group-item-warning">Likes</li>
-                        {%for like in activity_dict.likes%}
+                        {%for like in display_info.likes%}
                         <a href = "{%url 'blog' like.liker.slug%}">
                             <li class="list-group-item">Liked by {{like.liker.slug}}.</li>
                         </a>
@@ -95,7 +95,7 @@
                     </ul>
                     <ul class="list-group" style="margin-left:10px; width: 48%;">
                         <li class="list-group-item list-group-item-warning">Reblogs</li>
-                        {%for reblog in activity_dict.reblogs%}
+                        {%for reblog in display_info.reblogs%}
                         <a href = "{%url 'blog' reblog.blog.slug%}">
                             <li class="list-group-item">Reposted by {{reblog.blog.slug}}.</li>
                         </a>

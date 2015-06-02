@@ -4,6 +4,14 @@
 
 {%block content%}
 
+<style>
+
+    #image-clear_id{
+        visibility:hidden;
+    }
+
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -13,6 +21,7 @@
 
     {% bootstrap_form_errors form type='non_fields' %}
     {%for field in form%}
+
     {% bootstrap_field field layout='vertical' size='sm' %}
     {%endfor%}
     {% buttons submit='Save' %}{% endbuttons %}

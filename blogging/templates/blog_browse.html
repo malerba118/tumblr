@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+
+{% load thumbnail %}
+
+
+{%block head%}
+<style>
+
+    .thumbnail{
+        padding-top:15px;
+    }
+    .caption{
+        height:185px;
+        overflow:auto;
+    }
+
+</style>
+{%endblock%}
+
+{%block content%}
+
+
+<div class="container">
+    <div class="row">
+        {%for blog_info in display_info_list%}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        {% thumbnail blog_info.blog.image "200x150" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+      <div class="caption">
+        <h3>{{blog_info.blog.title}}</h3>
+        <p>{{blog_info.blog.description}}</p>
+
+      </div>
+        <p>
+            {%if blog_info.is_followed%}
+            <a href="{%url 'unfollow' blog_info.blog.slug%}" class="btn btn-default" role="button">Unfollow</a>
+            {%else%}
+            <a href="{%url 'follow' blog_info.blog.slug%}" class="btn btn-info" role="button">Follow</a>
+            {%endif%}
+            <a href="{%url 'blog' blog_info.blog.slug%}" class="btn btn-info" role="button">Blog</a>
+
+        </p>
+    </div>
+  </div>
+
+        {%endfor%}
+</div>
+</div>
+{%endblock%}

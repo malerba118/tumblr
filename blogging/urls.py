@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^blog/(?P<slug>[-_\w]+)/edit/', 'blogging.views.blog_edit_view', name="blog-edit"),
     url(r'^blog/(?P<slug>[-_\w]+)/follow/', 'blogging.views.follow', name="follow"),
     url(r'^blog/(?P<slug>[-_\w]+)/unfollow/', 'blogging.views.unfollow', name="unfollow"),
+    url(r'^blogs/browse/', 'blogging.views.blog_browse_view', name="blog-browse"),
 	url(r'^blog/(?P<slug>[-_\w]+)/', 'blogging.views.blog_view', name="blog"),
 
 )
