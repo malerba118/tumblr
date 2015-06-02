@@ -1,16 +1,21 @@
 {%extends "base.html"%}
 
+{% load thumbnail %}
 
 {%block content%}
 
 
 <div class="container" id="posts">
+
+
+
+    {%for activity_dict in activity_dicts%}
+
     <div class="row">
-        <div class="col-md-9 col-md-offset-1">
-
-
-            {%for activity_dict in activity_dicts%}
-
+        {% thumbnail activity_dict.activity.object.blog.image "80x80" crop="center" as im %}
+        <div class="col-md-1 col-md-offset-1"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></div>
+        {% endthumbnail %}
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="pull-right">{{activity_dict.activity.timestamp}}</div>
@@ -27,8 +32,8 @@
                 </div>
                 <div class="panel-body">
 
-                        <h3>{{activity_dict.activity.object.title}}</h3>
-                        <hr>
+                    <h3>{{activity_dict.activity.object.title}}</h3>
+                    <hr>
                     <blockquote>
                         <p>{{activity_dict.activity.object.content|safe}}</p>
                     </blockquote>
@@ -98,23 +103,21 @@
                     </ul>
 
                 </div>
-
             </div>
-
-
-
-
-
-            {%endfor%}
-
-
-
-
-
-
-
         </div>
+
+
+
+
     </div>
+    {%endfor%}
+
+
+
+
+
+
+
 </div>
 
 

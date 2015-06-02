@@ -35,9 +35,9 @@
     </header>
 
 
-    <!-- Main Content -->
 {%for post in posts%}
-    <div class="col-md-4 col-sm-6">
+
+    <div style="width:33%; display:inline-block; vertical-align:top;">
     	<div class="panel panel-default">
            <div class="panel-heading"><a href="#" class="pull-right">{{post.timestamp}}</a>
                <h4>Source: {{post.root.blog.slug}}

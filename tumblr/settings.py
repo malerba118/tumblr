@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'newsfeed',
     'search',
     'django_summernote',
+    'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (

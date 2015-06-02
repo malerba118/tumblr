@@ -3,6 +3,7 @@ from django.contrib.contenttypes.generic import GenericRelation, GenericForeignK
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
 from django.db import models
+from sorl.thumbnail import ImageField
 
 
 # Create your models here.
@@ -35,7 +36,7 @@ class Blog(models.Model):
     )
 
     user = models.OneToOneField(User)
-    image = models.ImageField(upload_to="blog_pictures/", default="blog_pictures/default.jpg")
+    image = ImageField(upload_to="blog_pictures/", default="blog_pictures/default.jpg")
     title = models.CharField(max_length=100, default="Dooood, give your blog a title")
     description = models.CharField(max_length=500, default="Look at me, I'm a description, weeee (hell yes, that even rhymes).")
     template = models.CharField(max_length=100, choices=BLOG_TEMPLATE_CHOICES, default=DEFAULT)
