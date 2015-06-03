@@ -15,6 +15,9 @@ from newsfeed.models import *
 def blog_view(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     posts = blog.get_posts()
+    post_display_info_list = [PostDisplayInfo(request.user.blog,
+                                              post,
+                                              Activity.find_activity_for_object(post.pk, ContentType.objects.get_for_model(Post)).activity_type) for post in posts]
     is_following = request.user.blog.is_following(blog)
     has_edit_permissions = blog.isOwnedBy(request.user)
     followers = blog.find_followers()
@@ -22,7 +25,7 @@ def blog_view(request, slug):
     followees = blog.find_followees()
     followee_info_list = [BlogDisplayInfo(blog, followee) for followee in followees]
     context = {"blog":blog,
-               "posts":posts,
+               "post_display_info_list":post_display_info_list,
                "is_following":is_following,
                "has_edit_permissions":has_edit_permissions,
                "follower_info_list":follower_info_list,
@@ -85,6 +88,8 @@ def reblog_post(request, post_id):
             new_post = form.save(commit=False)
             new_post.root = post.root
             new_post.blog = request.user.blog
+            if new_post.content != post.content:
+                new_post.content = '<a href="' +request.user.blog.get_absolute_url()+ '">' + request.user.blog.slug + ": </a>" + "<blockquote>" + new_post.content+ "</blockquote><hr><p><br></p>"
             new_post.save()##must persist prior to setting tags field
             new_post.tags = Tag.find_or_create_tags(form.data["tags_field"])
             new_post.save()
@@ -92,7 +97,10 @@ def reblog_post(request, post_id):
             return redirect(request.user.blog.get_absolute_url())
     form = PostCreateForm()
     form.fields["title"].initial = post.title
-    form.fields["content"].initial = "<blockquote>" + post.content+ '</blockquote>' + '<a href="' +request.user.blog.get_absolute_url()+ '">' + request.user.blog.slug + "</a>"
+    if post.is_root():
+        form.fields["content"].initial = '<a href="' +post.blog.get_absolute_url()+ '">' + post.blog.slug + ": </a>" + "<blockquote>" + post.content+ "</blockquote><hr><p><br></p>"
+    else:
+        form.fields["content"].initial = post.content
     context = {"post_form": form}
     context.update(csrf(request))
     return render(request, "post_create.html", context)

@@ -168,7 +168,8 @@ class Post(models.Model):
     def is_liked_by(self, blog):
         return Like.objects.filter(liker=blog, liked=self).count() > 0
 
-
+    def is_root(self):
+        return self.pk == self.root.pk
 
 class Follow(models.Model):
     follower = models.ForeignKey(Blog, related_name="follower")

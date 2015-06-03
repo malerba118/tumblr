@@ -6,4 +6,74 @@
 
 {%include "base_blog.html"%}
 
+{%block head%}
+<style>
+        body{
+            background-color: #e2d090;
+        }
+    </style>
+{%endblock%}
+
+<div class="container-fluid">
+
+
+
+    <div class="row">
+
+      <div class="col-md-12" style="text-align:center; border-style:solid; border-color:#77675c; background-color:#c9b284; padding: 20px;">
+        <h1>{{blog.title}}</h1>
+        <h3>{{blog.description}}</h3>
+      </div>
+    </div>
+<hr>
+
+    </div>
+    <div class="container">
+    {%for display_info in post_display_info_list%}
+
+<div class="row">
+  <div class="col_md-10" style="border-style:solid; border-color:#77675c; background-color:white; padding: 20px;">
+
+    <div class="row">
+      <div class="col-md-10">
+        <h3><strong>{{display_info.post.title}}</strong></h3>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-10">
+        <p>
+          <blockquote>{{display_info.post.content|safe}}</blockquote></p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <p></p>
+        <p>
+          <i class="icon-user"></i> by <a href="{{display_info.post.blog.slug.get_absolute_url}}">{{display_info.post.blog.slug}}</a>
+          | <i class="icon-calendar"></i> {{display_info.timestamp}}
+          | <i class="icon-comment"></i> <a href="{%url 'reblog' display_info.post.pk%}">Reblog</a>
+          | <i class="icon-share"></i>
+            <a id="like-toggle-button-{{display_info.post.pk}}" class="like-toggle-button" href="{%url 'like' display_info.post.pk%}">
+                {%if display_info.is_liked%}
+                <span class="glyphicon glyphicon-heart"></span>
+                {%else%}
+                <span class="glyphicon glyphicon-heart-empty"></span>
+                {%endif%}
+            </a>
+          | <i class="icon-tags"></i> Tags :
+            {%for tag_object in display_info.tags%}
+                        <a href="{%url 'tagged' tag_object.tag%}" class="label label-info">{{tag_object.tag}}</a>
+            {%endfor%}
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+    {%endfor%}
+</div>
 {% endblock %}
