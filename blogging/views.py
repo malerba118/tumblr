@@ -1,7 +1,9 @@
+import json
 from django.contrib import messages
 from django.core.context_processors import csrf
+
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
@@ -116,7 +118,36 @@ def like(request, post_id):
     like.liker = request.user.blog
     like.liked = post
     like.save()
+
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+def like_toggle(request, post_id):
+    if not request.method == "POST":
+        return redirect(request.META.get('HTTP_REFERER'))
+    post = get_object_or_404(Post, pk=post_id)
+    if post.is_liked_by(request.user.blog):
+        like = get_object_or_404(Like, liker=request.user.blog, liked=post)
+        like.delete()
+    else:
+        like = Like()
+        like.liker = request.user.blog
+        like.liked = post
+        like.save()
+    response_dict = {"is_liked":post.is_liked_by(request.user.blog),
+                     "post_id":post.pk }
+    return HttpResponse(json.dumps(response_dict), content_type='application/json')
+
+def likes_refresh_ajax(request, post_id):
+    if not request.method == "GET":
+        return redirect(request.META.get('HTTP_REFERER'))
+    post = get_object_or_404(Post, pk=post_id)
+    likes = post.find_likes()
+    likers = []
+    for like in likes:
+        likers.append({"liker": like.liker.slug, "liker_url": like.liker.get_absolute_url()})
+    response_dict = {"likers":likers}
+    return HttpResponse(json.dumps(response_dict), content_type='application/json')
 
 def unlike(request, post_id):
     post = get_object_or_404(Post, pk=post_id)

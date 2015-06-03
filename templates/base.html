@@ -130,7 +130,16 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Theme Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
+    {%block javascript%}
+    {%endblock%}
+
     <script>
+
+        $(".notes-badge").on("click", function(){
+            $(this).parent().parent().next(".notes").slideToggle(500);
+
+        });
+
         function searchToggle(){
 
             var search_bar = $("#search-bar")
@@ -141,8 +150,70 @@
 
         }
 
-        {%block javascript%}
-        {%endblock%}
+        function refresh_likes(post_id){
+
+                    $.ajax({
+                        url : "/blogging/likes/refresh/" + post_id + "/",
+                        type : "GET",
+                        dataType: "json",
+                        success : function(json) {
+
+                            likes_ul = $("#likes-"+post_id);
+                            likes_ul.empty();
+                            likes_ul.append('<li class="list-group-item list-group-item-warning">Likes</li>');
+
+                            for (i=0; i < json.likers.length; i++){
+                                likes_ul.append(
+                                "<a href ='" + json.likers[i].liker_url + "'>" + '<li class='+ '"list-group-item"' + '>Liked by ' + json.likers[i].liker + '.</li></a>'
+                                );
+                                console.log(json.likers[i].liker_url);
+                            }
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                            alert(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+                    return false;
+        }
+
+        $(document).ready(function() {
+            $(".like-toggle-button").click(function() {
+
+                    $.ajax({
+                        url : "" + $(this).attr("href"),
+                        type : "POST",
+                        dataType: "json",
+                        data : {
+
+                            csrfmiddlewaretoken: '{{ csrf_token }}'
+                            },
+                        success : function(json) {
+                            console.log(json.is_liked);
+                            var like_toggle_button = $("#like-toggle-button-"+json.post_id);
+                            var notes_badge = $("#notes-badge-"+json.post_id);
+                            if (json.is_liked){
+                                like_toggle_button.html('<span class="glyphicon glyphicon-heart"></span>');
+                                notes_badge.html(parseInt(notes_badge.html())+1);
+                            }
+                            else {
+                                like_toggle_button.html('<span class="glyphicon glyphicon-heart-empty"></span>');
+                                notes_badge.html(parseInt(notes_badge.html())-1);
+                            }
+
+                            refresh_likes(json.post_id);
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                            alert(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+                    return false;
+            });
+        });
+
+
+
     </script>
 
 <div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" title="" style="position: absolute; left: 0px; top: -9999px; width: 15px; height: 15px; z-index: 999999999;" data-original-title="Copy to clipboard">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="/assets/flash/ZeroClipboard.swf?noCache=1432696580980">         <param name="allowScriptAccess" value="sameDomain">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=getbootstrap.com%2C%2F%2Fgetbootstrap.com%2Chttp%3A%2F%2Fgetbootstrap.com">         <embed src="/assets/flash/ZeroClipboard.swf?noCache=1432696580980" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=getbootstrap.com%2C%2F%2Fgetbootstrap.com%2Chttp%3A%2F%2Fgetbootstrap.com" scale="exactfit">                </object></div><svg xmlns="http://www.w3.org/2000/svg" width="1140" height="500" viewBox="0 0 1140 500" preserveAspectRatio="none" style="visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs></defs><text x="0" y="53" style="font-weight:bold;font-size:53pt;font-family:Arial, Helvetica, Open Sans, sans-serif;dominant-baseline:middle">Thirdslide</text></svg></body></html>

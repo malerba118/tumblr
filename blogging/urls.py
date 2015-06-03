@@ -4,9 +4,9 @@ admin.autodiscover()
 
 #include((pattern_list, app_namespace, instance_namespace))
 urlpatterns = patterns('',
+    url(r'^likes/refresh/(?P<post_id>\d+)/', 'blogging.views.likes_refresh_ajax', name="likes-refresh"),
 	url(r'^post/(?P<post_id>\d+)/reblog/', 'blogging.views.reblog_post', name="reblog"),
-    url(r'^post/(?P<post_id>\d+)/like/', 'blogging.views.like', name="like"),
-    url(r'^post/(?P<post_id>\d+)/unlike/', 'blogging.views.unlike', name="unlike"),
+    url(r'^post/(?P<post_id>\d+)/like/', 'blogging.views.like_toggle', name="like"),
     url(r'^posts/tagged/(?P<tag>[-_\w]+)/', 'blogging.views.tagged_view', name="tagged"),
     url(r'^blog/(?P<slug>[-_\w]+)/post/create/', 'blogging.views.post_create_view', name="post-create"),
     url(r'^blog/(?P<slug>[-_\w]+)/edit/', 'blogging.views.blog_edit_view', name="blog-edit"),

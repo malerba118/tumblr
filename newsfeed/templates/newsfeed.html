@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 
+{% load staticfiles %}
 {% load thumbnail %}
 
 {%block content%}
@@ -54,14 +55,18 @@
 
 
                     <div class="pull-right inline">
-                        <span  role="button" class="badge notes-badge">{{display_info.reblogs.count|add:display_info.likes.count}}</span>
+                        <span id="notes-badge-{{display_info.post.pk}}"  role="button" class="badge notes-badge">{{display_info.reblogs.count|add:display_info.likes.count}}</span>
                         <div class="btn-group" role="group" aria-label="...">
 
-                            {%if display_info.is_liked%}
-                            <a role="button" class="btn btn-default" href="{%url 'unlike' display_info.post.pk%}"><span class="glyphicon glyphicon-heart"></span></a>
-                            {%else%}
-                            <a role="button" class="btn btn-default" href="{%url 'like' display_info.post.pk%}"><span class="glyphicon glyphicon-heart-empty"></span></a>
-                            {%endif%}
+
+                            <a role="button" id="like-toggle-button-{{display_info.post.pk}}" class="btn btn-default like-toggle-button" href="{%url 'like' display_info.post.pk%}">
+                                {%if display_info.is_liked%}
+                                <span class="glyphicon glyphicon-heart"></span>
+                                {%else%}
+                                <span class="glyphicon glyphicon-heart-empty"></span>
+                                {%endif%}
+                            </a>
+
                             <a role="button" class="btn btn-default" href="{%url 'reblog' display_info.post.pk%}">Reblog</a>
                         </div>
                     </div>
@@ -85,7 +90,7 @@
 
                 <div class="notes" hidden="true" style="overflow:auto;" >
                     <br>
-                    <ul class="list-group pull-right" style="margin-right:10px; width: 48%;">
+                    <ul id="likes-{{display_info.post.pk}}" class="list-group pull-right" style="margin-right:10px; width: 48%;">
                         <li class="list-group-item list-group-item-warning">Likes</li>
                         {%for like in display_info.likes%}
                         <a href = "{%url 'blog' like.liker.slug%}">
@@ -121,11 +126,13 @@
 </div>
 
 
+
 {% endblock %}
 
-{%block javascript%}
-        $(".notes-badge").on("click", function(){
-            $(this).parent().parent().next(".notes").slideToggle(500);
 
-        });
+{%block javascript%}
+
+
+
+
 {%endblock%}

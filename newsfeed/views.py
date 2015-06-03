@@ -1,3 +1,4 @@
+from django.core.context_processors import csrf
 from django.shortcuts import render
 
 # Create your views here.
@@ -22,4 +23,5 @@ def newsfeed_view(request):
             activities_w_extra_info.append({"activity":activity})
     #context = {"activity_dicts":activities_w_extra_info}
     context = {"display_info_list":display_info_list}
+    context.update(csrf(request))
     return render(request, "newsfeed.html", context)
