@@ -80,6 +80,9 @@ def post_create_view(request, slug):
         return render(request, "post_create.html", context)
     return HttpResponseForbidden()
 
+def blockquotify(blog, post):
+    return '<a href="' + blog.get_absolute_url()+ '">' + blog.slug + ": </a>" + "<blockquote>" + post.content+ "</blockquote><hr><p><br></p>"
+
 def reblog_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     if request.method == "POST":
@@ -88,8 +91,14 @@ def reblog_post(request, post_id):
             new_post = form.save(commit=False)
             new_post.root = post.root
             new_post.blog = request.user.blog
-            if new_post.content != post.content:
-                new_post.content = '<a href="' +request.user.blog.get_absolute_url()+ '">' + request.user.blog.slug + ": </a>" + "<blockquote>" + new_post.content+ "</blockquote><hr><p><br></p>"
+            if post.is_root():
+                if blockquotify(post.blog, post) == new_post.content:
+                    pass
+                else:
+                    new_post.content = blockquotify(request.user.blog, new_post)
+            else:
+                if new_post.content != post.content:
+                    new_post.content =  blockquotify(request.user.blog, new_post)
             new_post.save()##must persist prior to setting tags field
             new_post.tags = Tag.find_or_create_tags(form.data["tags_field"])
             new_post.save()
@@ -98,12 +107,24 @@ def reblog_post(request, post_id):
     form = PostCreateForm()
     form.fields["title"].initial = post.title
     if post.is_root():
-        form.fields["content"].initial = '<a href="' +post.blog.get_absolute_url()+ '">' + post.blog.slug + ": </a>" + "<blockquote>" + post.content+ "</blockquote><hr><p><br></p>"
+        form.fields["content"].initial = blockquotify(post.blog, post)
     else:
         form.fields["content"].initial = post.content
     context = {"post_form": form}
     context.update(csrf(request))
     return render(request, "post_create.html", context)
+
+
+def post_delete_ajax(request, post_id):
+    if  not request.method == "GET":
+        return redirect(request.META.get('HTTP_REFERER'))
+    post = get_object_or_404(Post, pk=post_id)
+    if post.is_owned_by(request.user.blog):
+        post.delete()
+        is_deleted = Post.objects.filter(pk=post_id).count()==0
+        response_dict = {"is_deleted":is_deleted, "post_id":post_id}
+        return HttpResponse(json.dumps(response_dict), content_type="application/json")
+    return HttpResponseForbidden
 
 
 def follow(request, slug):

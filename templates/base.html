@@ -178,6 +178,28 @@
         }
 
         $(document).ready(function() {
+            $(".post-delete").click(function() {
+
+                    $.ajax({
+                        url : $(this).attr('href'),
+                        type : "GET",
+                        dataType: "json",
+                        success : function(json) {
+
+                            if (json.is_deleted){
+                                $("#post-container-" + json.post_id).fadeOut(500);
+                            }
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                            alert("Failed to delete post.");
+                        }
+                    });
+                    return false;
+            });
+        });
+
+        $(document).ready(function() {
             $(".like-toggle-button").click(function() {
 
                     $.ajax({

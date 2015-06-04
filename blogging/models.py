@@ -171,6 +171,9 @@ class Post(models.Model):
     def is_root(self):
         return self.pk == self.root.pk
 
+    def is_owned_by(self, blog):
+        return self.blog == blog
+
 class Follow(models.Model):
     follower = models.ForeignKey(Blog, related_name="follower")
     followee = models.ForeignKey(Blog, related_name="followee")
