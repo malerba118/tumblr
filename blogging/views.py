@@ -56,7 +56,7 @@ def blog_edit_view(request, slug):
 
 
 def blog_browse_view(request):
-    blogs = Blog.objects.all().order_by('?')[:150]
+    blogs = Blog.objects.all().order_by('?')[:50]
     display_info_list = (BlogDisplayInfo(request.user.blog, blog) for blog in blogs)
     return render(request, "blog_browse.html", {"display_info_list":display_info_list})
 
@@ -224,6 +224,37 @@ class PostDisplayInfo(ActivityDisplayInfo):
         self.reblogs = post.find_notes()
         self.likes = post.find_likes()
         self.tags = post.tags.all()
+
+    def as_dict(self):
+        return {
+            "post": {"id": self.post.pk,
+                     "blog":{
+                          "url": self.post.blog.get_absolute_url(),
+                          "image_url": self.post.blog.image.url,
+                          "slug" : self.post.blog.slug
+                         },
+                     "root": {
+                         "owner_slug":self.post.root.blog.slug,
+                         "owner_url":self.post.root.blog.get_absolute_url()
+                     },
+                     "title": self.post.title,
+                     "content": self.post.content,
+                     "timestamp": self.post.timestamp.strftime("%I:%M%p on %B %d, %Y"),
+                     "is_root": self.post.is_root()
+            },
+            "is_liked": self.is_liked,
+            "reblogs" : [{"reblog_owner_url": reblog.blog.get_absolute_url(), "reblog_owner_slug": reblog.blog.slug} for reblog in self.reblogs],
+            "likes" : [{"like_owner_url": like.liker.get_absolute_url(), "like_owner_slug": like.liker.slug} for like in self.likes],
+            "tags" : [tag.tag for tag in self.tags.all()]
+        }
+
+
+    def reblogs_to_info_list(self):
+        info_list = []
+        for reblog in self.reblogs:
+            info_list.append
+
+
 
 
 class BlogDisplayInfo():

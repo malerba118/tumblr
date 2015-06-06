@@ -143,7 +143,7 @@
 {%endverbatim%}
     <script type="text/javascript">
 
-        function refresh_likes(post_id){
+        function refresh_likes(post_id, likes_ul){
 
                     $.ajax({
                         url : "/blogging/likes/refresh/" + post_id + "/",
@@ -151,7 +151,6 @@
                         dataType: "json",
                         success : function(json) {
 
-                            likes_ul = $("#likes-"+post_id);
                             likes_ul.empty();
                             likes_ul.append('<li class="list-group-item list-group-item-warning">Likes</li>');
 
@@ -175,7 +174,8 @@
         }
 
 
-        $(".notes-badge").on("click", function(){
+
+        $("body").on("click", ".notes-badge", function(){
             $(this).parent().parent().next(".notes").slideToggle(500);
 
         });
@@ -193,8 +193,8 @@
 
 
 
-        $(document).ready(function() {
-            $(".post-delete").click(function() {
+
+            $(document).on("click", ".post-delete", function() {
 
                     $.ajax({
                         url : $(this).attr('href'),
@@ -213,24 +213,25 @@
                     });
                     return false;
             });
-        });
 
-        $(document).ready(function() {
-            $(".like-toggle-button").click(function() {
+
+
+            $("body").on("click", ".like-toggle-button", function() {
+
+                    var like_toggle_button = $(this);
 
                     $.ajax({
                         url : "" + $(this).attr("href"),
                         type : "POST",
                         dataType: "json",
                         data : {
-
                             csrfmiddlewaretoken: '{{ csrf_token }}'
                             },
                         success : function(json) {
                             console.log(json.is_liked);
-                            var like_toggle_button = $("#like-toggle-button-"+json.post_id);
-                            var notes_badge = $("#notes-badge-"+json.post_id);
-                            if (json.is_liked){
+
+                            var notes_badge = like_toggle_button.parent().prev();
+                            if (json.is_liked == true){
                                 like_toggle_button.html('<span class="glyphicon glyphicon-heart"></span>');
                                 notes_badge.html(parseInt(notes_badge.html())+1);
                             }
@@ -239,7 +240,7 @@
                                 notes_badge.html(parseInt(notes_badge.html())-1);
                             }
 
-                            refresh_likes(json.post_id);
+                            refresh_likes(json.post_id, like_toggle_button.parents(".panel").find("#likes-" + json.post_id));
 
                         },
                         error : function(xhr,errmsg,err) {
@@ -248,7 +249,6 @@
                     });
                     return false;
             });
-        });
 
 
 

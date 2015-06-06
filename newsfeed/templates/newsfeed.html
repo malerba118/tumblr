@@ -6,118 +6,7 @@
 {%block content%}
 
 
-<div class="container" id="posts">
-
-
-
-    {%for display_info in display_info_list%}
-
-    <div class="row">
-        {% thumbnail display_info.post.blog.image "80x80" crop="center" as im %}
-        <div class="col-md-1 col-md-offset-1"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></div>
-        {% endthumbnail %}
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="pull-right">{{display_info.timestamp}}</div>
-                    <div>
-                        <a href="{%url 'blog' display_info.post.blog.slug%}">
-                            {{display_info.post.blog.slug}}
-                        </a>
-                        {%if display_info.is_post %}
-                        posted:
-                        {%elif display_info.is_reblog %}
-                        reblogged:
-                        {%endif%}
-                    </div>
-                </div>
-                <div class="panel-body" style="overflow:auto;">
-
-                    <h3>{{display_info.post.title}}</h3>
-                    <hr>
-                    <blockquote>
-                        <p>{{display_info.post.content|safe}}</p>
-                    </blockquote>
-
-                    <div class="tumblr-tags">
-                        <span class="glyphicon glyphicon-tags"></span>
-
-                        {%for tag_object in display_info.tags%}
-                        <a href="{%url 'tagged' tag_object.tag%}" class="label label-default">{{tag_object.tag}}</a>
-                        {%endfor%}
-
-                    </div>
-
-                </div>
-                <div class="panel-footer">
-
-
-
-
-                    <div class="pull-right inline">
-                        <span id="notes-badge-{{display_info.post.pk}}"  role="button" class="badge notes-badge">{{display_info.reblogs.count|add:display_info.likes.count}}</span>
-                        <div class="btn-group" role="group" aria-label="...">
-
-
-                            <a role="button" id="like-toggle-button-{{display_info.post.pk}}" class="btn btn-default like-toggle-button" href="{%url 'like' display_info.post.pk%}">
-                                {%if display_info.is_liked%}
-                                <span class="glyphicon glyphicon-heart"></span>
-                                {%else%}
-                                <span class="glyphicon glyphicon-heart-empty"></span>
-                                {%endif%}
-                            </a>
-
-                            <a role="button" class="btn btn-default" href="{%url 'reblog' display_info.post.pk%}">Reblog</a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <p>Source:
-                                <a href="{%url 'blog' display_info.post.root.blog.slug%}">
-                                    {{display_info.post.root.blog.slug}}
-                                </a>
-                            </p>
-
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-
-
-                <div class="notes" hidden="true" style="overflow:auto;" >
-                    <br>
-                    <ul id="likes-{{display_info.post.pk}}" class="list-group pull-right" style="margin-right:10px; width: 48%;">
-                        <li class="list-group-item list-group-item-warning">Likes</li>
-                        {%for like in display_info.likes%}
-                        <a href = "{%url 'blog' like.liker.slug%}">
-                            <li class="list-group-item">Liked by {{like.liker.slug}}.</li>
-                        </a>
-                        {%endfor%}
-                    </ul>
-                    <ul class="list-group" style="margin-left:10px; width: 48%;">
-                        <li class="list-group-item list-group-item-warning">Reblogs</li>
-                        {%for reblog in display_info.reblogs%}
-                        <a href = "{%url 'blog' reblog.blog.slug%}">
-                            <li class="list-group-item">Reposted by {{reblog.blog.slug}}.</li>
-                        </a>
-                        {%endfor%}
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
-    {%endfor%}
-
-
+<div id="post-container" class="container" id="posts">
 
 
 
@@ -125,13 +14,67 @@
 
 </div>
 
-
+<div id="loading-footer" hidden="true" style="position:fixed; bottom:0; height: 50px; width:100%; text-align:center;"><img src="/media/loading.GIF"></div>
 
 {% endblock %}
 
 
 {%block javascript%}
 
+<script>
+
+        const NUM_POSTS_TO_RETRIEVE = 8;
+        offset_val = 0;
+        is_loading = false;
+
+        function load_more_posts(){
+
+                    $.ajax({
+                        url : "/newsfeed/posts/load/",
+                        type : "GET",
+                        dataType: "html",
+                        beforeSend: function(){
+                            $('#loading-footer').show();
+                        },
+                        complete: function(){
+                            $('#loading-footer').hide();
+                        },
+                        data: {
+                            offset: String(offset_val),
+                            NUM_POSTS_TO_RETRIEVE: NUM_POSTS_TO_RETRIEVE
+                        },
+
+                        success : function(html) {
+
+
+                            offset_val += NUM_POSTS_TO_RETRIEVE;
+                            $("#post-container").append(html);
+                            is_loading = false;
+
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                            alert(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+                    return false;
+        }
+
+       $(function() {
+            load_more_posts();
+        });
+
+        $(document).scroll( function(){
+            if ( ($(window).height() + $(window).scrollTop()) >= ($('body').height()) ){
+                if (is_loading == false){
+                    is_loading = true;
+                    load_more_posts();
+                }
+            }
+        });
+
+
+</script>
 
 
 

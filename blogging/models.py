@@ -163,7 +163,7 @@ class Post(models.Model):
         return Post.objects.filter(root=self.root).exclude(pk=self.root.pk).order_by("-timestamp")
 
     def find_likes(self):
-        return Like.objects.filter(liked=self).order_by("-timestamp")
+        return Like.objects.filter(liked__root=self.root).order_by("-timestamp")
 
     def is_liked_by(self, blog):
         return Like.objects.filter(liker=blog, liked=self).count() > 0
