@@ -124,16 +124,56 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="{% static 'js/handlebars-v3.0.3.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
     <script src="{% static 'js/docs.min.js'%}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./Theme Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+
+
 
     {%block javascript%}
     {%endblock%}
 
-    <script>
+  {%verbatim%}
+  <script id="test-template" type="text/x-handlebars-template">
+      <a href = "{{liker_url}}"><li class="list-group-item">Liked by {{liker}}.</li></a>
+
+  </script>
+{%endverbatim%}
+    <script type="text/javascript">
+
+        function refresh_likes(post_id){
+
+                    $.ajax({
+                        url : "/blogging/likes/refresh/" + post_id + "/",
+                        type : "GET",
+                        dataType: "json",
+                        success : function(json) {
+
+                            likes_ul = $("#likes-"+post_id);
+                            likes_ul.empty();
+                            likes_ul.append('<li class="list-group-item list-group-item-warning">Likes</li>');
+
+                            raw_template = $("#test-template").html();
+                            compiled_template = Handlebars.compile(raw_template);
+
+                            for (i=0; i < json.likers.length; i++){
+
+                                //New way
+                                context = {liker_url: json.likers[i].liker_url, liker: json.likers[i].liker};
+                                rendered_template = compiled_template(context);
+                                likes_ul.append(rendered_template);
+                            }
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                            alert(xhr.status + ": " + xhr.responseText);
+                        }
+                    });
+                    return false;
+        }
+
 
         $(".notes-badge").on("click", function(){
             $(this).parent().parent().next(".notes").slideToggle(500);
@@ -148,34 +188,10 @@
             search_bar.slideToggle(500);
             search_bar_input.focus();
 
+
         }
 
-        function refresh_likes(post_id){
 
-                    $.ajax({
-                        url : "/blogging/likes/refresh/" + post_id + "/",
-                        type : "GET",
-                        dataType: "json",
-                        success : function(json) {
-
-                            likes_ul = $("#likes-"+post_id);
-                            likes_ul.empty();
-                            likes_ul.append('<li class="list-group-item list-group-item-warning">Likes</li>');
-
-                            for (i=0; i < json.likers.length; i++){
-                                likes_ul.append(
-                                "<a href ='" + json.likers[i].liker_url + "'>" + '<li class='+ '"list-group-item"' + '>Liked by ' + json.likers[i].liker + '.</li></a>'
-                                );
-                                console.log(json.likers[i].liker_url);
-                            }
-
-                        },
-                        error : function(xhr,errmsg,err) {
-                            alert(xhr.status + ": " + xhr.responseText);
-                        }
-                    });
-                    return false;
-        }
 
         $(document).ready(function() {
             $(".post-delete").click(function() {
