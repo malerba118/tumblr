@@ -37,8 +37,8 @@ class Blog(models.Model):
 
     user = models.OneToOneField(User)
     image = ImageField(upload_to="blog_pictures/", default="blog_pictures/default.jpg", blank=True)
-    title = models.CharField(max_length=100, default="Dooood, give your blog a title")
-    description = models.CharField(max_length=500, default="Look at me, I'm a description, weeee (hell yes, that even rhymes).")
+    title = models.CharField(max_length=100, default="Doood, give your blog a title")
+    description = models.CharField(max_length=500, default="Look at me, I'm a description, weeee.")
     template = models.CharField(max_length=100, choices=BLOG_TEMPLATE_CHOICES, default=DEFAULT)
     slug = models.SlugField(unique = True)
 

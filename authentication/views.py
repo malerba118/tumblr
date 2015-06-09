@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response, redirect
@@ -15,9 +16,7 @@ def register(request):
         user_form = UserRegisterForm(request.POST)
         blog_form = BlogCreateForm(request.POST)
         if user_form.is_valid() and blog_form.is_valid():
-            user = user_form.save(commit=False)
-            user.username = user.email
-            user.save()
+            user = user_form.save()
             blog = blog_form.save(commit=False)
             blog.user = user
             blog.save()
@@ -62,6 +61,7 @@ def log_in(request):
     context.update(csrf(request))
     return render(request, "login.html", context)
 
+@login_required(login_url='/auth/login/')
 def log_out(request):
     logout(request)
     return redirect("log-in")

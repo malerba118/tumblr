@@ -1,4 +1,5 @@
 import json
+from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -9,7 +10,7 @@ from blogging.models import Post, Like
 from blogging.models import Activity, POST, REBLOG, LIKE
 from blogging.views import PostDisplayInfo
 
-
+@login_required(login_url='/auth/login/')
 def newsfeed_view(request):
     newsfeed_activities = Activity.find_newsfeed_activities(request.user.blog).order_by("-timestamp")
     display_info_list=[]
@@ -34,7 +35,8 @@ def newsfeed_view(request):
 #     response_dict = {"posts": display_info_list}
 #     return HttpResponse(json.dumps(response_dict), content_type='application/json')
 
-def load_more_posts(request):
+@login_required(login_url='/auth/login/')
+def load_more_newsfeed_posts(request):
     if not request.method == "GET":
         return redirect(request.META.get('HTTP_REFERER'))
     offset = int(request.GET["offset"])

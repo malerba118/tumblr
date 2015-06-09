@@ -14,7 +14,6 @@
 
 </div>
 
-<div id="loading-footer" hidden="true" style="position:fixed; bottom:0; height: 50px; width:100%; text-align:center;"><img src="/media/loading.GIF"></div>
 
 {% endblock %}
 
@@ -23,52 +22,19 @@
 
 <script>
 
-        const NUM_POSTS_TO_RETRIEVE = 8;
-        offset_val = 0;
-        is_loading = false;
-
-        function load_more_posts(){
-
-                    $.ajax({
-                        url : "/newsfeed/posts/load/",
-                        type : "GET",
-                        dataType: "html",
-                        beforeSend: function(){
-                            $('#loading-footer').show();
-                        },
-                        complete: function(){
-                            $('#loading-footer').hide();
-                        },
-                        data: {
-                            offset: String(offset_val),
-                            NUM_POSTS_TO_RETRIEVE: NUM_POSTS_TO_RETRIEVE
-                        },
-
-                        success : function(html) {
-
-
-                            offset_val += NUM_POSTS_TO_RETRIEVE;
-                            $("#post-container").append(html);
-                            is_loading = false;
-
-
-                        },
-                        error : function(xhr,errmsg,err) {
-                            alert(xhr.status + ": " + xhr.responseText);
-                        }
-                    });
-                    return false;
-        }
-
        $(function() {
-            load_more_posts();
+            load_more_posts("/newsfeed/posts/load/");
         });
 
         $(document).scroll( function(){
+            var scroll_top = $(this).scrollTop();
             if ( ($(window).height() + $(window).scrollTop()) >= ($('body').height()) ){
-                if (is_loading == false){
-                    is_loading = true;
-                    load_more_posts();
+                if (scroll_top > last_scroll_top){
+                    if (is_loading == false){
+                        is_loading = true;
+                        last_scroll_top = scroll_top;
+                        load_more_posts("/newsfeed/posts/load/");
+                    }
                 }
             }
         });

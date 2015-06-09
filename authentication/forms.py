@@ -6,8 +6,8 @@ from django import forms
 class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ("email", "password1", "password2")
+        fields = ("username", "password1", "password2","email")
 
 class UserLoginForm(forms.Form):
-    username = forms.CharField(max_length=50, label="Email")
+    username = forms.CharField(max_length=50, label="Username")
     password = forms.CharField(widget=forms.PasswordInput())

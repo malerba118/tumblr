@@ -9,7 +9,7 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class BlogCreateForm(forms.ModelForm):
-    slug = forms.SlugField(label="Desired Blog Url")
+    slug = forms.SlugField(label="Desired Blog Url", help_text="zazzoo.com/blogging/blog/DESIRED_BLOG_URL")
     class Meta:
         model = Blog
         fields = ("slug",)
