@@ -41,11 +41,11 @@ def log_in(request):
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
             user = authenticate(username=username, password=password)
-            is_new_user = user.last_login == None
 
             if user is not None:
     # the password verified for the user
                 if user.is_active:
+                    is_new_user = user.last_login == None
                     login(request, user)
                     if is_new_user:
                         return redirect("blog-browse")
