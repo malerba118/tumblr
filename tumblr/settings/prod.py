@@ -3,7 +3,7 @@ from tumblr.settings.common import *
 DEBUG = False
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1.8001"]
 
 
 DATABASES = {
@@ -11,7 +11,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tumblr',
 		'USER' : 'malerba118',
-		'PASSWORD' : 'Rowber118',
+		'PASSWORD' : '',
         'HOST' : 'tumblr.c3spk20myn8l.us-west-2.rds.amazonaws.com',
         'PORT' : '5432',
     }
