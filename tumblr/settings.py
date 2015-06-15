@@ -23,11 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vwn(a%16(f659!*ct4&spsn_95@-ux-&dw4w#3v^m@4m_k89a%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
+DEBUG = False
+#THUMBNAIL_DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
@@ -44,6 +43,7 @@ INSTALLED_APPS = (
     'search',
     'django_summernote',
     'sorl.thumbnail',
+    #'easy_thumbnails',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -87,16 +87,6 @@ WSGI_APPLICATION = 'tumblr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tumblr4',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 
 
 # Internationalization
@@ -116,12 +106,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
 
-if DEBUG:
-    MEDIA_URL = '/media/'
-    STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only")
-    MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "static", "static"),
-    )
+TEMPLATE_DEBUG = False
+
+ALLOWED_HOSTS = ["*",]
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tumblr',
+                'USER' : 'malerba118',
+                'PASSWORD' : '',
+        'HOST' : 'tumblr.c3spk20myn8l.us-west-2.rds.amazonaws.com',
+        'PORT' : '5432',
+    }
+}
+
+
+
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'static'), "static")
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(os.path.join(BASE_DIR, 'static'), "media")
+

@@ -5,9 +5,13 @@
 {%for display_info in display_info_list%}
 
     <div class="row">
+        
+        <div class="col-md-1 col-md-offset-1">
         {% thumbnail display_info.post.blog.image "80x80" crop="center" as im %}
-        <div class="col-md-1 col-md-offset-1"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></div>
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
         {% endthumbnail %}
+        </div>
+      
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
