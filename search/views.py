@@ -8,6 +8,12 @@ from django.utils.text import slugify
 
 @login_required(login_url='/auth/login/')
 def search_tags(request):
+    """
+    Search for a tag and redirect to the tag view for that tag.
+    :param request: http request
+    :return: redirect to appropriate tag view or if query is null,
+    redirect to previous page
+    """
     query = request.GET['q']
     if query != None:
         tag = slugify(query)

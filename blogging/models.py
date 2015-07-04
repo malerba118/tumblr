@@ -68,12 +68,14 @@ class Blog(models.Model):
     def is_following(self, blog):
         return Follow.objects.filter(follower=self, followee=blog).count() != 0
 
-    """
-    Create and persist a follow object where this blog follows a blog
-    that is passed as an argument.
-    @:param blog - blog to be followed
-    """
+
     def follow(self, blog):
+        """
+        Create and persist a follow object where this blog follows a blog
+        that is passed as an argument.
+        @:param blog - blog to be followed
+        @:return the new follow object
+        """
         f = Follow()
         f.follower = self
         f.followee = blog

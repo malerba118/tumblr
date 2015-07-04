@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c4d90b4-330d-414b-aa60-15ba9cd0b5c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tumblr/settings/prod.py" afterPath="$PROJECT_DIR$/tumblr/settings/prod.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/media/blog_pictures/Thumbs.db" afterPath="$PROJECT_DIR$/static/media/blog_pictures/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blogging/models.py" afterPath="$PROJECT_DIR$/blogging/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tumblr/settings.py" afterPath="$PROJECT_DIR$/tumblr/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tumblr/urls.py" afterPath="$PROJECT_DIR$/tumblr/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blogging/views.py" afterPath="$PROJECT_DIR$/blogging/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newsfeed/views.py" afterPath="$PROJECT_DIR$/newsfeed/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search/views.py" afterPath="$PROJECT_DIR$/search/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tumblr.iws" />
@@ -27,84 +33,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="common.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements/common.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="187">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dev.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements/dev.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements/prod.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
-              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tumblr/settings/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tumblr/settings/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tumblr/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2244">
-              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prod.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tumblr/settings/prod.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32807016" vertical-offset="0" max-vertical-offset="570">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dev.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tumblr/settings/dev.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2941">
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#379#388#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsfeed.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="85" max-vertical-offset="884">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posts.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogging/templates/posts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538" vertical-offset="34" max-vertical-offset="2040">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tumblr/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="697">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding>
+                <element signature="e#615#628#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogging/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5610" max-vertical-offset="6749">
+              <caret line="235" column="22" selection-start-line="235" selection-start-column="22" selection-end-line="235" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blogging/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.0487237" vertical-offset="0" max-vertical-offset="3230">
+              <caret line="133" column="43" selection-start-line="133" selection-start-column="43" selection-end-line="133" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogging/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/search/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogging/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,7 +156,6 @@
         <option value="$PROJECT_DIR$/authentication/admin.py" />
         <option value="$PROJECT_DIR$/static/static/css/clean-blog.min.css" />
         <option value="$PROJECT_DIR$/templates/editable_base_blog.html" />
-        <option value="$PROJECT_DIR$/search/forms.py" />
         <option value="$PROJECT_DIR$/search/urls.py" />
         <option value="$PROJECT_DIR$/authentication/templates/login.html" />
         <option value="$PROJECT_DIR$/authentication/templates/register.html" />
@@ -139,23 +165,16 @@
         <option value="$PROJECT_DIR$/blogging/admin.py" />
         <option value="$PROJECT_DIR$/blogging/templates/post_create.html" />
         <option value="$PROJECT_DIR$/blogging/thumbs.py" />
-        <option value="$PROJECT_DIR$/tumblr/settings.py" />
         <option value="$PROJECT_DIR$/blogging/templates/blog_edit.html" />
         <option value="$PROJECT_DIR$/blogging/templates/blog_browse.html" />
         <option value="$PROJECT_DIR$/static/static/js/blog_ajax.js" />
-        <option value="$PROJECT_DIR$/blogging/templates/posts.html" />
         <option value="$PROJECT_DIR$/newsfeed/urls.py" />
         <option value="$PROJECT_DIR$/blogging/templates/default_blog_posts.html" />
         <option value="$PROJECT_DIR$/blogging/urls.py" />
         <option value="$PROJECT_DIR$/blogging/templates/simple_blog_posts.html" />
         <option value="$PROJECT_DIR$/templates/base_blog.html" />
         <option value="$PROJECT_DIR$/tumblr/views.py" />
-        <option value="$PROJECT_DIR$/tumblr/urls.py" />
-        <option value="$PROJECT_DIR$/search/views.py" />
-        <option value="$PROJECT_DIR$/newsfeed/views.py" />
-        <option value="$PROJECT_DIR$/blogging/views.py" />
         <option value="$PROJECT_DIR$/authentication/forms.py" />
-        <option value="$PROJECT_DIR$/blogging/models.py" />
         <option value="$PROJECT_DIR$/blogging/forms.py" />
         <option value="$PROJECT_DIR$/blogging/templates/simple_blog_template.html" />
         <option value="$PROJECT_DIR$/blogging/templates/tagged.html" />
@@ -170,14 +189,22 @@
         <option value="$PROJECT_DIR$/tumblr/settings/dev.py" />
         <option value="$PROJECT_DIR$/tumblr/settings/common.py" />
         <option value="$PROJECT_DIR$/tumblr/settings/prod.py" />
+        <option value="$PROJECT_DIR$/blogging/templates/posts.html" />
+        <option value="$PROJECT_DIR$/blogging/models.py" />
+        <option value="$PROJECT_DIR$/tumblr/urls.py" />
+        <option value="$PROJECT_DIR$/tumblr/settings.py" />
+        <option value="$PROJECT_DIR$/search/views.py" />
+        <option value="$PROJECT_DIR$/search/forms.py" />
+        <option value="$PROJECT_DIR$/newsfeed/views.py" />
+        <option value="$PROJECT_DIR$/blogging/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="340" />
-    <option name="y" value="7" />
-    <option name="width" value="768" />
-    <option name="height" value="826" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1552" />
+    <option name="height" value="842" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -244,24 +271,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tumblr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tumblr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tumblr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -279,6 +288,10 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="staticfiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -291,14 +304,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,6 +534,398 @@
       <recent name="C:\Users\Austin\Desktop\tumblr_venv\tumblr\authentication\templates" />
       <recent name="C:\Users\Austin\Desktop\tumblr_venv\tumblr\authentication\templates\authentication" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/templates/posts.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/manage.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/settings.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/urls.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/views.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/wsgi.py</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/0007_auto_20150614_1603.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/0008_auto_20150615_0007.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/0009_auto_20150615_0014.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/blog_pictures/1384412312.jpg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/blog_pictures/PHOTO_Larry_Malerba_DO_DHt.jpeg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/blog_pictures/Rangers-logo.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/blog_pictures/giphy.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/blog_pictures/scissors-truss-300x227_CpryTe9.jpg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/django-summernote/2015-06-14/365f7475-39e8-44c1-ace2-d2e09e9169a3.jpg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/django-summernote/2015-06-15/26a1ea62-ddeb-45cb-aad0-2cbec917b714.jpg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/media/django-summernote/2015-06-15/995e612a-bddd-495f-a903-13a866a512f2.jpg</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/base.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/changelists.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/dashboard.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/forms.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/ie.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/login.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/rtl.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/css/widgets.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/changelist-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/changelist-bg_rtl.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/default-bg-reverse.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/default-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/deleted-overlay.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/gis/move_vertex_off.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/gis/move_vertex_on.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon-no.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon-unknown.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon-yes.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_addlink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_alert.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_calendar.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_changelink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_clock.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_deletelink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_error.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_searchbox.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/icon_success.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/inline-delete-8bit.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/inline-delete.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/inline-restore-8bit.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/inline-restore.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/inline-splitter-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/nav-bg-grabber.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/nav-bg-reverse.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/nav-bg-selected.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/nav-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/selector-icons.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/selector-search.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/sorting-icons.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/tooltag-add.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/img/tooltag-arrowright.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/LICENSE-JQUERY.txt</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/SelectBox.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/SelectFilter2.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/actions.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/actions.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/admin/DateTimeShortcuts.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/admin/RelatedObjectLookups.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/calendar.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/collapse.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/collapse.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/core.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/inlines.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/inlines.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/jquery.init.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/jquery.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/jquery.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/prepopulate.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/prepopulate.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/related-widget-wrapper.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/timeparse.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/admin/js/urlify.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/SOURCE</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/django_summernote.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/django_summernote_inplace.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/jquery.fileupload.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/jquery.iframe-transport.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/jquery.ui.widget.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ar-AR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ca-ES.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-cs-CZ.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-da-DK.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-de-DE.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-es-ES.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-es-EU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-fa-IR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-fi-FI.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-fr-FR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-he-IL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-hu-HU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-id-ID.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-it-IT.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ja-JP.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ko-KR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-nb-NO.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-nl-NL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-pl-PL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-pt-BR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ro-RO.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-ru-RU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-sk-SK.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-sl-SI.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-sr-RS-Latin.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-sr-RS.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-sv-SE.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-th-TH.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-tr-TR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-uk-UA.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-vi-VN.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-zh-CN.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/lang/summernote-zh-TW.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/plugin/summernote-ext-video.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/summernote.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/static/django_summernote/summernote.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/base.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/changelists.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/dashboard.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/forms.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/ie.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/login.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/rtl.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/css/widgets.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/changelist-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/changelist-bg_rtl.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/default-bg-reverse.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/default-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/deleted-overlay.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/gis/move_vertex_off.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/gis/move_vertex_on.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon-no.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon-unknown.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon-yes.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_addlink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_alert.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_calendar.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_changelink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_clock.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_deletelink.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_error.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_searchbox.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/icon_success.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/inline-delete-8bit.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/inline-delete.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/inline-restore-8bit.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/inline-restore.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/inline-splitter-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/nav-bg-grabber.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/nav-bg-reverse.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/nav-bg-selected.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/nav-bg.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/selector-icons.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/selector-search.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/sorting-icons.gif</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/tooltag-add.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/img/tooltag-arrowright.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/LICENSE-JQUERY.txt</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/SelectBox.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/SelectFilter2.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/actions.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/actions.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/admin/DateTimeShortcuts.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/admin/RelatedObjectLookups.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/calendar.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/collapse.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/collapse.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/core.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/inlines.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/inlines.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/jquery.init.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/jquery.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/jquery.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/prepopulate.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/prepopulate.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/related-widget-wrapper.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/timeparse.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/admin/js/urlify.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/SOURCE</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/django_summernote.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/django_summernote_inplace.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/jquery.fileupload.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/jquery.iframe-transport.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/jquery.ui.widget.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ar-AR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ca-ES.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-cs-CZ.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-da-DK.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-de-DE.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-es-ES.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-es-EU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-fa-IR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-fi-FI.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-fr-FR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-he-IL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-hu-HU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-id-ID.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-it-IT.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ja-JP.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ko-KR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-nb-NO.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-nl-NL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-pl-PL.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-pt-BR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ro-RO.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-ru-RU.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-sk-SK.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-sl-SI.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-sr-RS-Latin.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-sr-RS.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-sv-SE.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-th-TH.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-tr-TR.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-uk-UA.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-vi-VN.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-zh-CN.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/lang/summernote-zh-TW.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/plugin/summernote-ext-video.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/summernote.css</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/static/staticfiles/django_summernote/summernote.min.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/templates/base.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/templates/base_blog.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/templates/editable_base_blog.html</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/templates/home.html</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/admin.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/forms.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/models.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/authentication/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/admin.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/forms.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/models.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0001_initial.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0002_activity.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0003_auto_20150601_1637.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0004_blog_image.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0005_auto_20150601_1847.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/0006_auto_20150601_2151.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/blogging/migrations/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/admin.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/apps.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/models.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/settings.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/__pycache__/widgets.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/migrations/__pycache__/0001_initial.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/django_summernote/migrations/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/__pycache__/admin.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/__pycache__/models.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/migrations/__pycache__/0001_initial.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/migrations/__pycache__/0002_auto_20150531_2141.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/newsfeed/migrations/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/search/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/search/__pycache__/admin.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/search/__pycache__/models.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/search/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/search/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/__pycache__/__init__.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/__pycache__/settings.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/__pycache__/urls.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/__pycache__/views.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/__pycache__/wsgi.cpython-32.pyc</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/settings/__init__.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/settings/common.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/settings/dev.py</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tumblr/settings/prod.py</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with property conflicts" />
+          <option name="myStatusName" value="Will be merged with property conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -804,7 +1201,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433884782717</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="First attempt to serve on EC2 instance">
+      <created>1434294486281</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1434294486281</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="5">
@@ -828,29 +1231,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="340" y="7" width="768" height="826" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1552" height="842" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2589041" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2042042" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10479042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10233918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12483487" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32882884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -891,7 +1294,8 @@
     <MESSAGE value="Infinite loading implemented for tag view and blogs. Registration bug fixed." />
     <MESSAGE value="Fixed login bug." />
     <MESSAGE value="Final commit before deploying to AWS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Final commit before deploying to AWS." />
+    <MESSAGE value="First attempt to serve on EC2 instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="First attempt to serve on EC2 instance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -930,13 +1334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.106583074" vertical-offset="0" max-vertical-offset="638">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -989,20 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0796875" vertical-offset="0" max-vertical-offset="640">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogging/templates/posts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1972">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newsfeed/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
@@ -1014,13 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-56.884617" vertical-offset="0" max-vertical-offset="1683">
           <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogging/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1038,13 +1414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authentication/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
@@ -1052,59 +1421,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="969">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authentication/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="476">
           <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authentication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1328125" vertical-offset="0" max-vertical-offset="640">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogging/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44815466" vertical-offset="0" max-vertical-offset="5321">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogging/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="3281">
-          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1119,27 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.846154" vertical-offset="151" max-vertical-offset="833">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="884">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogging/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authentication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1188,14 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/settings/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
@@ -1207,16 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/settings/dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,26 +1517,161 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/django_summernote/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6399318" vertical-offset="961" max-vertical-offset="1547">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogging/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tumblr/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039443154" vertical-offset="0" max-vertical-offset="431">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5916473" vertical-offset="0" max-vertical-offset="476">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="431">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsfeed/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4338747" vertical-offset="0" max-vertical-offset="969">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsfeed/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.118329465" vertical-offset="0" max-vertical-offset="431">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4988399" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authentication/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19721578" vertical-offset="0" max-vertical-offset="431">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogging/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tumblr/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="2244">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2941">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="e#379#388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="85" max-vertical-offset="884">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/settings/common.py">
+    <entry file="file://$PROJECT_DIR$/blogging/templates/posts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="1921">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="34" max-vertical-offset="2040">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#div#3;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tumblr/settings/prod.py">
+    <entry file="file://$PROJECT_DIR$/tumblr/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32807016" vertical-offset="0" max-vertical-offset="570">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="697">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#615#628#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogging/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5610" max-vertical-offset="6749">
+          <caret line="235" column="22" selection-start-line="235" selection-start-column="22" selection-end-line="235" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogging/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.0487237" vertical-offset="0" max-vertical-offset="3230">
+          <caret line="133" column="43" selection-start-line="133" selection-start-column="43" selection-end-line="133" selection-end-column="43" />
           <folding />
         </state>
       </provider>
